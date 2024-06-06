@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Resultados</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="">
+
+    <div class="bg-black text-white p-6 pb-0 w-full font-mono  justify-center flex ">
+        <h1>Cauculadora de Resultados</h1>
+        </div>
+    <div class="bg-black text-white p-6 w-full font-mono  justify-center flex ">
+  
+        <div class="flex justify-between items-center">
+           
+    <form id="form-calculo" class="grid grid-cols-1 md:grid-cols-3 grid-flow-row gap-4">
+      <!-- Campos para cada variável -->
+      <div>
+        <label for="meses" class="block text-sm font-medium text-gray-100">Meses</label>
+        <input type="number" id="meses" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="12">
+      </div>
+      <div>
+        <label for="valorAlugado" class="block text-sm font-medium text-gray-100">Valor Alugado</label>
+        <input type="number" id="valorAlugado" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="0">
+      </div>
+      <div>
+        <label for="valorVenda" class="block text-sm font-medium text-gray-100">Valor Venda</label>
+        <input type="number" id="valorVenda" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="385000">
+      </div>
+      <div>
+        <label for="avaliacao" class="block text-sm font-medium text-gray-100">Avaliação</label>
+        <input type="number" id="avaliacao" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="280000">
+      </div>
+      <div>
+        <label for="valorArremate" class="block text-sm font-medium text-gray-100">Valor Arremate</label>
+        <input type="number" id="valorArremate" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="231000">
+      </div>
+      <div>
+        <label for="PorcentagemEntrada" class="block text-sm font-medium text-gray-100">Porcentagem Entrada</label>
+        <input type="number" id="PorcentagemEntrada" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="5">
+      </div>
+      <div>
+        <label for="porcentagemItbiSaldo" class="block text-sm font-medium text-gray-100">Porcentagem ITBI Saldo</label>
+        <input type="number" id="porcentagemItbiSaldo" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="0.5">
+      </div>
+      <div>
+        <label for="porcentagemItbiEntrada" class="block text-sm font-medium text-gray-100">Porcentagem ITBI Entrada</label>
+        <input type="number" id="porcentagemItbiEntrada" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="2">
+      </div>
+      <div>
+        <label for="porcentagemCustosProcessuais" class="block text-sm font-medium text-gray-100">Porcentagem Custos Processuais</label>
+        <input type="number" id="porcentagemCustosProcessuais" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="2.5">
+      </div>
+      <div>
+        <label for="porcentagemCustosReforma" class="block text-sm font-medium text-gray-100">Porcentagem Custos Reforma</label>
+        <input type="number" id="porcentagemCustosReforma" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="2.5">
+      </div>
+      <div>
+        <label for="custosDesocupacao" class="block text-sm font-medium text-gray-100">Custos Desocupação</label>
+        <input type="number" id="custosDesocupacao" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="0">
+      </div>
+      <div>
+        <label for="porcentagemAdv" class="block text-sm font-medium text-gray-100">Porcentagem Advogado</label>
+        <input type="number" id="porcentagemAdv" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="5">
+      </div>
+      <div>
+        <label for="porcentagemLeiloeiro" class="block text-sm font-medium text-gray-100">Porcentagem Leiloeiro</label>
+        <input type="number" id="porcentagemLeiloeiro" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="5">
+      </div>
+      <div>
+        <label for="registro" class="block text-sm font-medium text-gray-100">Registro</label>
+        <input type="number" id="registro" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="2473.73">
+      </div>
+      <div>
+        <label for="taxaCorrecao" class="block text-sm font-medium text-gray-100">Taxa Correção (%)</label>
+        <input type="number" id="taxaCorrecao" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="1">
+      </div>
+      <div>
+        <label for="valorPrimeiraParcelaFinanciamento" class="block text-sm font-medium text-gray-100">Valor Primeira Parcela Financiamento</label>
+        <input type="number" id="valorPrimeiraParcelaFinanciamento" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="1972">
+      </div>
+      <div>
+        <label for="valorEscritura" class="block text-sm font-medium text-gray-100">Valor Escritura</label>
+        <input type="number" id="valorEscritura" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="0">
+      </div>
+      <div>
+        <label for="condominioMensal" class="block text-sm font-medium text-gray-100">Condomínio Mensal</label>
+        <input type="number" id="condominioMensal" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="750">
+      </div>
+      <div>
+        <label for="porcentagemCorretagem" class="block text-sm font-medium text-gray-100">Porcentagem Corretagem</label>
+        <input type="number" id="porcentagemCorretagem" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="6">
+      </div>
+      <div>
+        <label for="despesasAdicionais" class="block text-sm font-medium text-gray-100">Despesas Adicionais</label>
+        <input type="number" id="despesasAdicionais" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="18000">
+      </div>
+      <div>
+        <label for="porcentagemImpostoRenda" class="block text-sm font-medium text-gray-100">Porcentagem Imposto Renda</label>
+        <input type="number" id="porcentagemImpostoRenda" class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" value="15">
+      </div>
+      <!-- <div class="col-span-2">
+        <button type="button" id="calcular" class="w-full bg-indigo-500 text-white py-2 px-4 rounded-md">Calcular</button>
+      </div> -->
+    </form>
+</div>
+</div>
+</div>
+<div class="">  </div>
+    <div id="resultados" class="bg-black text-white p-6  w-full font-mono  justify-center flex "></div>
+  
+
+
+   
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">$(document).ready(function() {
+    function calcularResultado(params) {
+      const {
+        meses,
+        valorAlugado,
+        valorVenda,
+        avaliacao,
+        valorArremate,
+        PorcentagemEntrada,
+        porcentagemItbiSaldo,
+        porcentagemItbiEntrada,
+        porcentagemCustosProcessuais,
+        porcentagemCustosReforma,
+        custosDesocupacao,
+        porcentagemAdv,
+        porcentagemLeiloeiro,
+        registro,
+        taxaCorrecao,
+        valorPrimeiraParcelaFinanciamento,
+        valorEscritura,
+        condominioMensal,
+        porcentagemCorretagem,
+        despesasAdicionais,
+        porcentagemImpostoRenda
+      } = params;
+  
+      const receitaAluguel = valorAlugado * meses;
+      const entrada = valorArremate * (PorcentagemEntrada / 100);
+      const financiamentoQuitacao = valorArremate - entrada;
+      const aliquotaItbiSaldo = porcentagemItbiSaldo / 100;
+      const aliquotaItbiEntrada = porcentagemItbiEntrada / 100;
+      const custosProcessuais = (porcentagemCustosProcessuais / 100) * valorArremate;
+      const custosReforma = (porcentagemCustosReforma / 100) * valorArremate;
+      const itbiEntrada = entrada * aliquotaItbiEntrada;
+      const itbiSaldo = financiamentoQuitacao * aliquotaItbiSaldo;
+      const leiloeiro = valorArremate * (porcentagemLeiloeiro / 100);
+      const advogado = valorArremate * (porcentagemAdv / 100);
+      const taxaCorrecaoMensal = (taxaCorrecao / 100) / 12;
+      const financiamentoParcelas = valorPrimeiraParcelaFinanciamento;
+  
+      let parcelasIndividuais = [];
+      for (let i = 0; i < meses; i++) {
+        if (parcelasIndividuais.length == 0) {
+          parcelasIndividuais.push(financiamentoParcelas);
+        } else {
+          parcelasIndividuais.push(parcelasIndividuais[parcelasIndividuais.length - 1] * (1 + taxaCorrecaoMensal));
+        }
+      }
+  
+      const totalParcelas = parcelasIndividuais.reduce((a, b) => a + b, 0);
+      const mediaParcelas = totalParcelas / meses;
+      const iptu = avaliacao * 0.005;
+      const corretagem = valorVenda * (porcentagemCorretagem / 100);
+      const custoCondominio = condominioMensal * meses;
+      const custoIPTU = (iptu / 12) * meses;
+      const iptuMensal = iptu / 12;
+  
+      const despesas = {
+        entrada: -entrada,
+        leiloeiro: -leiloeiro,
+        itbiSaldo: -itbiSaldo,
+        itbiEntrada: -itbiEntrada,
+        registro: -registro,
+        custosProcessuais: -custosProcessuais,
+        custosReforma: -custosReforma,
+        despesasAdicionais: -despesasAdicionais,
+        totalParcelas: -totalParcelas,
+        corretagem: -corretagem,
+        escritura: -valorEscritura,
+      };
+  
+      let custoTotalAteVenda = 0;
+      for (const key in despesas) {
+        if (despesas.hasOwnProperty(key)) {
+          custoTotalAteVenda += despesas[key];
+        }
+      }
+  
+      const resultadoConsolidado = (valorVenda - valorArremate) + custoTotalAteVenda;
+      const impostoRenda = resultadoConsolidado * (porcentagemImpostoRenda / 100);
+      const custoTotalEfetivo = ((custoTotalAteVenda + -impostoRenda) * -1);
+      const lucro = valorVenda - financiamentoQuitacao - custoTotalEfetivo;
+      const ROI = (lucro / custoTotalEfetivo) * 100;
+  
+      return {
+        valorArremate,
+        valorAvaliacao: avaliacao,
+        valorVenda,
+        entrada: -entrada,
+        financiamentoQuitacao: -financiamentoQuitacao,
+        leiloeiro: -leiloeiro,
+        itbiEntrada: -itbiEntrada,
+        itbiSaldo: -itbiSaldo,
+        registro: -registro ,
+        escritura: valorEscritura,
+        advogado: -advogado,
+        custosProcessuais: -custosProcessuais,
+        custosReforma: -custosReforma,
+        despesasAdicionais: -despesasAdicionais,
+        meses,
+        iptuMensal: -iptuMensal,
+        custoIPTU : -custoIPTU,
+        condominioMensal: -condominioMensal,
+        custoCondominio: -custoCondominio,
+        mediaParcelas: -mediaParcelas,
+        totalParcelas:-totalParcelas,
+        corretagem: -corretagem ,
+        impostoRenda: -impostoRenda,
+        custoTotalEfetivo: -custoTotalEfetivo,
+        ROI,
+        lucro,
+        ROIMensal: ROI / meses,
+        lucroMensal: lucro / meses,
+      };
+    }
+  
+    function atualizarResultados() {
+      const params = {
+        meses: parseFloat($('#meses').val()),
+        valorAlugado: parseFloat($('#valorAlugado').val()),
+        valorVenda: parseFloat($('#valorVenda').val()),
+        avaliacao: parseFloat($('#avaliacao').val()),
+        valorArremate: parseFloat($('#valorArremate').val()),
+        PorcentagemEntrada: parseFloat($('#PorcentagemEntrada').val()),
+        porcentagemItbiSaldo: parseFloat($('#porcentagemItbiSaldo').val()),
+        porcentagemItbiEntrada: parseFloat($('#porcentagemItbiEntrada').val()),
+        porcentagemCustosProcessuais: parseFloat($('#porcentagemCustosProcessuais').val()),
+        porcentagemCustosReforma: parseFloat($('#porcentagemCustosReforma').val()),
+        custosDesocupacao: parseFloat($('#custosDesocupacao').val()),
+        porcentagemAdv: parseFloat($('#porcentagemAdv').val()),
+        porcentagemLeiloeiro: parseFloat($('#porcentagemLeiloeiro').val()),
+        registro: parseFloat($('#registro').val()),
+        taxaCorrecao: parseFloat($('#taxaCorrecao').val()),
+        valorPrimeiraParcelaFinanciamento: parseFloat($('#valorPrimeiraParcelaFinanciamento').val()),
+        valorEscritura: parseFloat($('#valorEscritura').val()),
+        condominioMensal: parseFloat($('#condominioMensal').val()),
+        porcentagemCorretagem: parseFloat($('#porcentagemCorretagem').val()),
+        despesasAdicionais: parseFloat($('#despesasAdicionais').val()),
+        porcentagemImpostoRenda: parseFloat($('#porcentagemImpostoRenda').val()),
+      };
+  
+      const resultados = calcularResultado(params);
+      let resultadoHtml = '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">';
+      for (const [key, value] of Object.entries(resultados)) {
+        resultadoHtml += ` <div class="p-4  `+(value<0 ? 'text-red-500' : 'text-lime-400')+` bg-slate-900"><strong>${key}:</strong> ${value.toFixed(2)}</div>`;
+      }
+      resultadoHtml += '</div>';
+      $('#resultados').html(resultadoHtml);
+    }
+  
+    $('#form-calculo input').on('input', atualizarResultados);
+    $('#calcular').on('click', atualizarResultados);
+  
+    atualizarResultados();
+  });
+  </script>
+</body>
+</html>

@@ -116,6 +116,20 @@
    
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript">$(document).ready(function() {
+
+  function transformarCamelCaseParaEspacosECapitalizacao(camelCaseString) {
+    // Divide a string camelCase em palavras usando uma expressão regular
+    const palavras = camelCaseString.replace(/([A-Z])/g, ' $1').trim();
+    
+    // Capitaliza a primeira letra de cada palavra
+    const palavrasCapitalizadas = palavras.split(' ').map(palavra => 
+        palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase()
+    );
+    
+    // Junta as palavras capitalizadas com espaços
+    return palavrasCapitalizadas.join(' ');
+}
+  
     function calcularResultado(params) {
       const {
         meses,
@@ -259,7 +273,7 @@
       const resultados = calcularResultado(params);
       let resultadoHtml = '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">';
       for (const [key, value] of Object.entries(resultados)) {
-        resultadoHtml += ` <div class="p-4  `+(value<0 ? 'text-red-500' : 'text-lime-400')+` bg-slate-900"><strong>${key}:</strong> ${value.toFixed(2)}</div>`;
+        resultadoHtml += ` <div class="p-4  `+(value<0 ? 'text-red-500' : 'text-lime-400')+` bg-slate-900"><strong>${transformarCamelCaseParaEspacosECapitalizacao(key)}:</strong> ${value.toFixed(2)}</div>`;
       }
       resultadoHtml += '</div>';
       $('#resultados').html(resultadoHtml);
